@@ -1,4 +1,4 @@
-"""
+"""Template script for running EEG processing / analysis across a group.
 
 Moving from notebook -> script
 
@@ -10,8 +10,8 @@ Moving from notebook -> script
 ## IMPORTS
 import mne
 
-##
-##
+###################################################################################################
+###################################################################################################
 
 # SETTINGS
 
@@ -27,21 +27,18 @@ RUN_ICA = False
 RUN_AUTOREJECT = False
 
 # Set data path
-DAT_PATH = '/Users/tom/Documents/Research/1-Projects/Phase/Experiments/rtPB/2-Data/rtPB-3/processed/EEG/'
+DAT_PATH = 'path/to/data/files'
 
 # Set other settings
 MY_VAR = 'value'
 
-
-##
-##
+###################################################################################################
+###################################################################################################
 
 # Running through the subjects
 #  Everything from load & after - in a loop
 
-
 def main():
-    """   """
 
     # SETUP
     # Any work that's outside the loop
