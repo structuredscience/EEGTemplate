@@ -1,4 +1,4 @@
-"""Template script for running EEG processing / analysis across a group.
+"""Template script for running EEG preprocessing.
 
 Moving from notebook -> script
 
@@ -9,6 +9,9 @@ Moving from notebook -> script
 
 ## IMPORTS
 import mne
+
+from mne.preprocessing import ICA, read_ica
+from autoreject import AutoReject
 
 ###################################################################################################
 ###################################################################################################
@@ -27,7 +30,7 @@ RUN_ICA = False
 RUN_AUTOREJECT = False
 
 # Set data path
-DAT_PATH = 'path/to/data/files'
+DATA_PATH = 'path/to/data/files'
 
 # Set other settings
 MY_VAR = 'value'
@@ -43,36 +46,30 @@ def main():
     # SETUP
     # Any work that's outside the loop
 
-    # Get all subj files (clean the list if needed)
-    subj_files = []
+    # Get all subj files
+    #   This also set up to do some kind of cleaning of the files list, list if needed
+    subj_files = [file_name for file_name in os.listdir(DATA_PATH) if 'FILE_TYPE' in filename]
+    n_subjs = len(subj_files)
 
     # Set up any group level collections
     outputs = np.array(shape=[10, 10])
 
     # Loop across all subjects
     for subj_ind, subj_file in enumerate(subj_files):
-        pass
 
         # Add status updates
         print('Running Subject # ', subj_ind)
 
         # Load subject of data
 
+
         # Do a pre-processing
 
-        # Do analyses of interest
 
-        # Note: might have to add try/excepts for problems
-        try:
-            pass
-        except:
-            print('Subject number' subj_ind, 'failed.')
 
-        # Note: remember to collect things of interest into group stores
-        #  and/or save out individual files (however makes sense)
 
-    # Save any group level files
-    np.save(outputs, 'check')
+
+
 
 
 if __name__ == "__main__":
