@@ -53,6 +53,9 @@ MY_VAR = 'value'
 
 def main():
 
+    # Set MNE verbosity level
+    mne.set_log_level(verbose=False)
+
     # SETUP
     # Any work that's outside the loop
 
